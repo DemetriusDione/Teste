@@ -47,7 +47,7 @@ public class EmpresaDAO {
 	}
 
 	public static Empresa consulta(String cnpj) {
-		Empresa empresa = null;
+		Empresa empresa = null; 
 		java.sql.PreparedStatement ps;
 		try (Connection conn = new FabricaDeConexoes().getConnection()) {
 			ps = conn.prepareStatement("select * from empresa where cnpj = ?");
@@ -71,7 +71,6 @@ public class EmpresaDAO {
 		} catch (SQLException e) {
 			throw new RuntimeException(e);
 		}
-
 		return empresa;
 	}
 }
